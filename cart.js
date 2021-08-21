@@ -44,7 +44,7 @@ function applyPromo(interPromo, off) {
             alert('Promo Code Already Applied.');
         }
     } else {
-        alert('Inorrect Promo Code.');
+        alert('Incorrect Promo Code.');
     }
     document.getElementById('promoInput').value = '';
 }
