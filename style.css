@@ -1,9 +1,39 @@
+/*------------------------------------------------------------------
+    Template Name: iMac Configuration
+    Template URI: https://imac-configuration.netlify.app/
+    Description: This is HTML5 , CSS3 , Bootstrap Practical JavaScript Template.
+    Author: Md Ohidur Rahman
+    Author Email: ohidur.ru.2019@gmail.com
+    Author URI: https://www.facebook.com/ohidur.AlexMarcer/
+    Version: 1.0
+--------------------------------------------------------------------
+/*------------------------------------------------------------------
+                Programming Hero Assigment Requirements;
+
+                    1. Aqurate UI Theme.              (98%)            (OK)
+                    2. Bootstrap Framework Used.      (98%)            (OK)
+                    3. Memory, Stroage, Delivery Button Click Worked.  (OK)
+                    4. Poppins Font By Imported Google Link.           (OK)
+                    5. Default iMac Price Fixed($1299).                (OK)
+
+                For Bonus Marks
+
+                    1. Footer Total Value 20%Off Promo Code Function.  (OK)
+                    2. Meaningful ClassName/idName And Code Format.    (OK)
+                    3. Try To use Private Repository & Netlify Deploy. (OK)
+
+/*----------------------------------------*/
+/*         Imported Google Fonts
+/*----------------------------------------*/ 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/*----------------------------------------*/
+/*        Theme default CSS Start
+/*----------------------------------------*/
 p {
     margin: 0;
 }
 .ml-4 {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 .align-left {
     text-align: right;
@@ -16,11 +46,21 @@ body {
 .header-height {
     height: 100px;
 }
-hr.total-hr {
-  border: 2px solid #050203;
+.onepexel {
+    border: 1px solid #383838;
+}
+.total-hr {
+  border: 3px solid #000000;
 }
 .promo-button {
     cursor: pointer;
     background-color: crimson;
     color: #fff;
 }
+/*----------------------------------------*/
+/*       Theme default CSS End
+/*----------------------------------------*/
+/*----------------------------------------*/
+/*   Thank You Programming Hero Exmaminer.
+                Have a nice Day
+/*----------------------------------------*/

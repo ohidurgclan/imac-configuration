@@ -1,12 +1,20 @@
-// variable declare
+/*------------------------------------------------
+        Default Variable For HTML Elements.
+--------------------------------------------------*/
 let bestPrice = document.getElementById('bestCost');
 let memoryPrice = document.getElementById('extraMemory');
 let storagePrice = document.getElementById('extraStorage');
 let deliveryCharge = document.getElementById('extraDelivery');
-let totalPriceDisplay = document.getElementById('totalPrice');
+let displayPrice = document.getElementById('totalPrice');
 let finalCost = document.getElementById('footerFinalCost');
 let promoInput = document.getElementById('promoInput');
-
+let promoCode = "stevekaku";
+/*---------------------------------------------------------
+                Default Variable Ends.
+-----------------------------------------------------------*/
+/*---------------------------------------------------------
+            Extra Product Cost Function Starts.
+-----------------------------------------------------------*/
 function extraProductCost(product, price) {
     if (product == 'memory') {
         memoryPrice.innerText = price;
@@ -16,34 +24,48 @@ function extraProductCost(product, price) {
         deliveryCharge.innerText = price;
     }
     let totalPrice = parseInt(bestPrice.innerText) + parseInt(memoryPrice.innerText) + parseInt(storagePrice.innerText) + parseInt(deliveryCharge.innerText);
-
-    totalPriceDisplay.innerText = totalPrice;
-    finalCost.innerText = totalPriceDisplay;
+    displayPrice.innerText = totalPrice;
+    finalCost.innerText = totalPrice;
 }
-
+/*-------------------------------------------------------
+            Extra Product Cost Function Ends.
+--------------------------------------------------------*/
+/*-------------------------------------------------------
+            Promo Code  Function Starts.
+--------------------------------------------------------*/
 function applyPromo() {
-    let promoCode = "stevekaku";
-    if (promoInput.value = promoCode) {
-        let off20 = 20;
-        let overAllCost = parseInt(finalCost.innerText);
-        let twentyPercent = (off20 / 100) * overAllCost;
-        overAllCost = overAllCost - twentyPercent;
-        finalCost.innerText = overAllCost;
-        document.getElementById('promoInput').value = '';
+    let off20 = 20;
+    if (promoInput.value == promoCode) {
+        if (finalCost.innerText == displayPrice.innerText) {
+            let overAllCost = parseInt(finalCost.innerText);
+            let twentyPercentOff = (off20 / 100) * overAllCost;
+            overAllCost = overAllCost - twentyPercentOff;
+            finalCost.innerText = overAllCost;
+        } else {
+            alert('Promo Code Already Applied.');
+        }
+    } else {
+        alert('Inorrect Promo Code.');
     }
+    document.getElementById('promoInput').value = '';
 }
-// memory
+/*-------------------------------------------------------
+            Promo Code  Function Ends.
+--------------------------------------------------------*/
+/*-------------------------------------------------------
+        Calling Function by HTML Elements Starts.
+--------------------------------------------------------*/
+// Extra Memory Price Calculation.
 document.getElementById('eightGbMemory').addEventListener('click', function () {
     extraProductCost('memory', 0);
 });
 document.getElementById('sixteenGbMemory').addEventListener('click', function () {
     extraProductCost('memory', 180);
 });
-// storage
+// Extra Storage Price Calculation.
 document.getElementById('storage256').addEventListener('click', function () {
     extraProductCost('storage', 0);
 });
-
 document.getElementById('storage512').addEventListener('click', function () {
     extraProductCost('storage', 100);
 });
@@ -51,19 +73,25 @@ document.getElementById('storage512').addEventListener('click', function () {
 document.getElementById('storage1tb').addEventListener('click', function () {
     extraProductCost('storage', 180);
 });
-
-// delivery
+// Extra Delivery Price Calculation.
 document.getElementById('freeDelivery').addEventListener('click', function () {
     extraProductCost('deliveryCost', 0);
 });
-
 document.getElementById('premiumDelivery')
     .addEventListener('click', function () {
         extraProductCost('deliveryCost', 20);
     });
 
-//   apply promo
+// 20% Off Promo Code Price Calculation.
 document.querySelector('.promo-button').addEventListener('click', function () {
     applyPromo();
 });
-
+/*-------------------------------------------------------
+        Calling Function by HTML Elements Ends.
+--------------------------------------------------------*/
+/*- - - - - Programming Hero DOM Assignment - - - - - -*/
+/*-------------------------------------------------------
+      Assignmet-5 Submited By Md Ohidur Rahman.
+         Thank You Programming Hero Examiner.
+                    Have a Nice Day!
+--------------------------------------------------------*/
