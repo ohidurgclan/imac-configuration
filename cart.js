@@ -33,12 +33,11 @@ function extraProductCost(product, price) {
 /*-------------------------------------------------------
             Promo Code  Function Starts.
 --------------------------------------------------------*/
-function applyPromo() {
-    let off20 = 20;
-    if (promoInput.value == promoCode) {
+function applyPromo(interPromo, off) {
+    if (interPromo.value == promoCode) {
         if (finalCost.innerText == displayPrice.innerText) {
             let overAllCost = parseInt(finalCost.innerText);
-            let twentyPercentOff = (off20 / 100) * overAllCost;
+            let twentyPercentOff = (off / 100) * overAllCost;
             overAllCost = overAllCost - twentyPercentOff;
             finalCost.innerText = overAllCost;
         } else {
@@ -81,10 +80,9 @@ document.getElementById('premiumDelivery')
     .addEventListener('click', function () {
         extraProductCost('deliveryCost', 20);
     });
-
 // 20% Off Promo Code Price Calculation.
 document.querySelector('.promo-button').addEventListener('click', function () {
-    applyPromo();
+    applyPromo(promoInput, 20);
 });
 /*-------------------------------------------------------
         Calling Function by HTML Elements Ends.
